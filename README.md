@@ -1,13 +1,11 @@
 # puzzle-solver
-Solves 3d puzzles (and thus 2d ones as well) by using Knuth's algorithm X (dancing links implementation).
+Solves 3d puzzles (and thus 2d ones as well) by using Knuth's algorithm X (dancing links implementation), at the moment this only solves puzzles that can be represented by cubes (or squares).
 
-At the moment this only solves puzzles that can be represented by cubes (or squares).
+To get it running you need [dlx-python](https://github.com/bforte/dlx-python), [matplotlib](http://matplotlib.org/), [numpy](http://www.numpy.org/) and [PIL](http://www.pythonware.com/products/pil/).
 
 # Implementation
 
-A Piece is basically just a list of 3-dimensional coordinates that it consists of.
-
-A puzzle consists of a list of Pieces and dimensions; once `solve()` is called it populates a binary matrix that describes the puzzle's corresponding exact cover problem instance. This is then solved by [dlx-python](https://github.com/bforte/dlx-python).
+A Piece is basically just a list of 3-dimensional coordinates. A Puzzle consists of a list of Pieces and dimensions; once `solve()` is called it populates a binary matrix that describes the puzzle's corresponding exact cover problem instance. This is then solved by [dlx-python](https://github.com/bforte/dlx-python).
 
 Once a puzzle is solved you can plot its solutions with the function `plot_solution` this will build a graph of the pieces, st. there is an edge from one piece to another if and only if their surfaces touch and colors that graph to determine a suitable coloring scheme for the solution.
 
@@ -18,7 +16,7 @@ Once a puzzle is solved you can plot its solutions with the function `plot_solut
 >>> from Puzzle import Puzzle
 ```
 
-To create a piece (T pentomino) simply call something like:
+To create a piece (T [pentomino](https://en.wikipedia.org/wiki/Pentomino)) simply call something like:
 
 ```
 >>> p = Piece( [[0,0,0], [0,1,0], [0,2,0], [-1,1,0], [-2,1,0]] )
@@ -48,4 +46,4 @@ See the `__main__` in `Puzzle.py` for a full example.
 
 # Credits
 
-Thanks [jlaire](https://github.com/jlaire) for the awesome dancing links implementation and to [eliasdorneles](https://github.com/eliasdorneles) (graph_coloring.py).
+Thanks [jlaire](https://github.com/jlaire) for the awesome dancing links implementation and to [eliasdorneles](https://github.com/eliasdorneles) (`graph_coloring.py`).
