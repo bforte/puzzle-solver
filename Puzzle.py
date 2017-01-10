@@ -167,7 +167,7 @@ class Puzzle:
         """ Plot all the pieces (useful for debugging) """
 
         for (i,p) in enumerate(self.pieces):
-            p.plot_blocks(p.init_blocks,i)
+            p.plot(plt_num=i)
 
 if __name__ == '__main__':
 
