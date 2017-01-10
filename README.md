@@ -31,10 +31,10 @@ To get an idea for how the piece looks like call:
 ```
 ![Image of the just created Piece p](https://github.com/bforte/puzzle-solver/blob/master/imgs/T.png)
 
-Once you got a list of pieces (`pentominos`) and want to solve a 5x6x2 puzzle, call:
+Once you got a list of pieces (`pentominos`) and want to solve a 6x5x2 puzzle, call:
 
 ```
->>> q = Puzzle(pentominos, 5,4,3)
+>>> q = Puzzle(pentominos, 6,5,2)
 >>> q.solve()
 >>> q.number_of_solutions
 2112
