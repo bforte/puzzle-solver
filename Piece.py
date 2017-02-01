@@ -94,6 +94,9 @@ class Piece:
 
         return valid
 
+    def __str__(self):
+        return "Piece( [ {!s} ] )".format( ', '.join(map(str,self.init_blocks)))
+
     def __eq__(self, other):
         # Create all placements to compare
         other.generate_distinct_placements()
