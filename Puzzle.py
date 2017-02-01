@@ -132,9 +132,10 @@ class Puzzle:
 
         # Generate an image
         blockwidth = 50
-        image_dimensions = (blockwidth*(self.x+2), ((self.z-1)*blockwidth/10+blockwidth*self.y)*self.z+2*blockwidth)
+        WIDTH = blockwidth*(self.x+2)
+        HEIGHT = (self.z-1)*blockwidth/10 + (self.y*self.z+2)*blockwidth
 
-        im = Image.new('RGBA', (blockwidth*(self.x+2), ((self.z-1)*blockwidth/10+blockwidth*self.y)*self.z+2*blockwidth), (255,255,255,255))
+        im = Image.new('RGBA', (WIDTH, HEIGHT), (255,255,255,255))
         draw = ImageDraw.Draw(im)
 
         # Loop over each GridNode and plot it
